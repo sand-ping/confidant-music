@@ -1,0 +1,21 @@
+<template name="index$2c103598">
+  <view class="_div data-v-5307a380 container">
+    <view class="_header data-v-5307a380">
+      <view bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_div data-v-5307a380 {{chooseHeader == 1 ? 'chooseHeader' : ''}}">发现</view>
+      <view bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_div data-v-5307a380 {{chooseHeader == 2 ? 'chooseHeader' : ''}}">热门</view>
+      <view bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_div data-v-5307a380 {{chooseHeader == 3 ? 'chooseHeader' : ''}}">搜索</view>
+    </view>
+    <view class="_div data-v-5307a380 song" wx:for="{{musicInfo}}" wx:for-index="index" wx:for-item="item">
+      <view class="_div data-v-5307a380 operate">
+        <view class="_i data-v-5307a380 iconfont icon-tianjia"></view>
+      </view>
+      <view class="_div data-v-5307a380 song-right" bindtap="handleProxy" data-eventid="{{'3-'+index}}" data-comkey="{{$k}}">
+        <view class="_div data-v-5307a380 songName">{{item.songName}}</view>
+        <view class="_div data-v-5307a380 song-right-bottom">
+          <view class="_div data-v-5307a380 singer">{{item.singer}}</view>
+          <view class="_div data-v-5307a380 composing">{{item.composing}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

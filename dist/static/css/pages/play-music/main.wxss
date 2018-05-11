@@ -1,0 +1,49 @@
+@import "/static/css/vendor.wxss";
+
+.container.data-v-38cf9f98 {
+  width: 100%;
+  height: 100%;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+._header.data-v-38cf9f98 {
+  text-align: center;
+  padding: 12rpx 0;
+  height: 136rpx;
+}
+._header .singer-wrap.data-v-38cf9f98 {
+  position: relative;
+  padding: 0 60rpx;
+  margin-top: 28rpx;
+  border-top: 2rpx solid white;
+}
+._header .singer-wrap .singer.data-v-38cf9f98 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28rpx;
+  padding: 0 4rpx;
+}
+.body.data-v-38cf9f98 {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 332rpx);
+  overflow: hidden;
+}
+.body .lyric.data-v-38cf9f98 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+.body .lyric .lyric-item.data-v-38cf9f98 {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+._footer.data-v-38cf9f98 {
+  width: 100%;
+  height: 192rpx;
+}

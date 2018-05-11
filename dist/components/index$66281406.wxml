@@ -1,0 +1,16 @@
+<template name="index$66281406">
+  <view class="_div data-v-38cf9f98 container">
+    <view class="_header data-v-38cf9f98">
+      <view class="_div data-v-38cf9f98 song">江南</view>
+      <view class="_div data-v-38cf9f98 singer-wrap">
+        <view class="_div data-v-38cf9f98 singer">林俊杰</view>
+      </view>
+    </view>
+    <view class="_div data-v-38cf9f98 body">
+      <view class="_div data-v-38cf9f98 lyric" style=" {{'top:' + lyheight + 'px'}}">
+        <view class="_div data-v-38cf9f98 lyric-item" wx:for="{{lytext}}" wx:for-index="index" wx:for-item="item" style=" {{index == lyindex ? 'color:red' : ''}}"> {{item}} </view>
+      </view>
+    </view>
+    <view bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_footer data-v-38cf9f98"> 播放 </view>
+  </view>
+</template>

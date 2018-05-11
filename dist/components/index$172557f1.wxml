@@ -1,0 +1,16 @@
+<template name="index$172557f1">
+  <view class="_div data-v-5307a380 container" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}">
+    <view class="_header data-v-5307a380">
+      <view class="_div data-v-5307a380">发现</view>
+      <view class="_div data-v-5307a380">热门</view>
+      <view class="_div data-v-5307a380">搜索</view>
+    </view>
+    <view class="_div data-v-5307a380 musicInfo" wx:for="{{musicInfo}}" wx:for-index="index" wx:for-item="item">
+      <view class="_div data-v-5307a380 songName">{{item.songName}}</view>
+      <view class="_div data-v-5307a380 musicInfo-bottom">
+        <view class="_div data-v-5307a380 singer">{{item.singer}}</view>
+        <view class="_div data-v-5307a380 composing">{{item.composing}}</view>
+      </view>
+    </view>
+  </view>
+</template>
