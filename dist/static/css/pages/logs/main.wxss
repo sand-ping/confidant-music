@@ -8,3 +8,8 @@
 .log-item {
   margin: 10rpx;
 }
+.camera {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}

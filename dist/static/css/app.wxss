@@ -22,9 +22,21 @@ page {
 .icon-shouye1:before {
   content: "\E627";
 }
-.icon-wode:before {
-  content: "\E614";
+.icon-bofang:before {
+  content: "\E60E";
+}
+.icon-zanting:before {
+  content: "\E67D";
+}
+.icon-xiayishou:before {
+  content: "\E647";
 }
 .icon-tianjia:before {
   content: "\E752";
+}
+.icon-wode:before {
+  content: "\E614";
+}
+.icon-xiayishou-copy:before {
+  content: "\E67E";
 }

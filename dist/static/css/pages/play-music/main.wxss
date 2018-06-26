@@ -1,24 +1,24 @@
 @import "/static/css/vendor.wxss";
 
-.container.data-v-38cf9f98 {
+.container.data-v-638219e2 {
   width: 100%;
   height: 100%;
   color: #333;
   margin: 0;
   padding: 0;
 }
-._header.data-v-38cf9f98 {
+._header.data-v-638219e2 {
   text-align: center;
   padding: 12rpx 0;
   height: 136rpx;
 }
-._header .singer-wrap.data-v-38cf9f98 {
+._header .singer-wrap.data-v-638219e2 {
   position: relative;
   padding: 0 60rpx;
   margin-top: 28rpx;
   border-top: 2rpx solid white;
 }
-._header .singer-wrap .singer.data-v-38cf9f98 {
+._header .singer-wrap .singer.data-v-638219e2 {
   position: absolute;
   top: 0;
   left: 50%;
@@ -26,24 +26,60 @@
   font-size: 28rpx;
   padding: 0 4rpx;
 }
-.body.data-v-38cf9f98 {
+.body.data-v-638219e2 {
   position: relative;
   width: 100%;
   height: calc(100% - 332rpx);
   overflow: hidden;
 }
-.body .lyric.data-v-38cf9f98 {
+.body .lyric.data-v-638219e2 {
   position: absolute;
   width: 100%;
   text-align: center;
 }
-.body .lyric .lyric-item.data-v-38cf9f98 {
+.body .lyric .lyric-item.data-v-638219e2 {
   height: 40rpx;
   line-height: 40rpx;
   font-size: 32rpx;
   text-align: center;
 }
-._footer.data-v-38cf9f98 {
+._footer.data-v-638219e2 {
   width: 100%;
   height: 192rpx;
+}
+._footer .progress-wrap.data-v-638219e2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  line-height: 30rpx;
+}
+._footer .progress-wrap .starttime.data-v-638219e2 {
+  font-size: 28rpx;
+}
+._footer .progress-wrap .progress.data-v-638219e2 {
+  position: relative;
+  width: calc(480rpx - 12rpx);
+  padding: 0 6rpx;
+}
+._footer .progress-wrap .progress .progress-line.data-v-638219e2 {
+  position: absolute;
+  left: 0;
+  top: 15rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #aaa;
+}
+._footer .progress-wrap .endtime.data-v-638219e2 {
+  font-size: 28rpx;
+}
+._footer .operate.data-v-638219e2 {
+  display: flex;
+  justify-content: center;
+}
+._footer .operate ._div.data-v-638219e2 {
+  width: 80rpx;
+  height: 80rpx;
+}
+._footer .operate .iconfont.data-v-638219e2 {
+  font-size: 50rpx;
+  color: #999;
 }

@@ -48,7 +48,10 @@ export default {
 }
 
 .icon-shouye1:before { content: "\e627"; }
-.icon-wode:before { content: "\e614"; }
+.icon-bofang:before { content: "\e60e"; }
+.icon-zanting:before { content: "\e67d"; }
+.icon-xiayishou:before { content: "\e647"; }
 .icon-tianjia:before { content: "\e752"; }
-
+.icon-wode:before { content: "\e614"; }
+.icon-xiayishou-copy:before { content: "\e67e"; }
 </style>

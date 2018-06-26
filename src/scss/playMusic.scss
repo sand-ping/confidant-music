@@ -45,6 +45,42 @@ header {
 footer{
   width:100%;
   height:96px;
+  .progress-wrap{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    line-height: 30rpx;
+    .starttime{
+      font-size: 28rpx;
+    }
+    .progress{
+      position: relative;
+      width:calc(480rpx - 12rpx);
+      padding:0 6rpx;
+      .progress-line{
+        position: absolute;
+        left:0;
+        top:15rpx;
+        width:100%;
+        border-bottom:1rpx solid #aaa;
+      }
+    }
+    .endtime{
+      font-size: 28rpx;
+    }
+  }
+  .operate{
+    display: flex;
+    justify-content: center;
+    div{
+      width:40px;
+      height:40px;
+    }
+    .iconfont{
+      font-size: 50rpx;
+      color: #999;
+    }
+  }
 }
 
 

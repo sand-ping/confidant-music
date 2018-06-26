@@ -65,6 +65,8 @@ function formatTime(date) {
 //
 //
 //
+//
+//
 
 
 
@@ -84,39 +86,45 @@ function formatTime(date) {
     this.logs = logs.map(function (log) {
       return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* formatTime */])(new Date(log));
     });
+  },
+  mounted: function mounted() {
+    var ctx = wx.createCameraContext();
+    setInterval(function () {
+      console.log('222');
+      ctx.takePhoto({
+        quality: 'high',
+        success: function success(res) {
+          //          this.setData({
+          //            src: res.tempImagePath
+          //          })
+          console.log('111');
+          console.log(res);
+        }
+      });
+    }, 1000);
   }
 });
 
 /***/ }),
 
-/***/ 21:
+/***/ 25:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 27:
+/***/ 31:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('ul', {
-    staticClass: "container log-list"
-  }, _vm._l((_vm.logs), function(log, index) {
-    return _c('li', {
-      key: index,
-      staticClass: "log-item",
-      class: {
-        red: _vm.aa
-      }
-    }, [_c('card', {
-      attrs: {
-        "text": (index + 1) + ' . ' + log,
-        "mpcomid": '0-' + index
-      }
-    })], 1)
-  }))], 1)
+  return _c('div', [_c('camera', {
+    staticClass: "camera",
+    attrs: {
+      "mpcomid": '0'
+    }
+  })], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -125,7 +133,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-28f6c4d2", esExports)
+     require("vue-hot-reload-api").rerender("data-v-74d2e1c5", esExports)
   }
 }
 
@@ -136,11 +144,11 @@ if (false) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_28f6c4d2_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_74d2e1c5_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(31);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(21)
+  __webpack_require__(25)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
@@ -155,7 +163,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_lib_selector_type_script_index_0_index_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_28f6c4d2_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_lib_template_compiler_index_id_data_v_74d2e1c5_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_node_modules_mpvue_loader_lib_selector_type_template_index_0_index_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
@@ -171,9 +179,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-28f6c4d2", Component.options)
+    hotAPI.createRecord("data-v-74d2e1c5", Component.options)
   } else {
-    hotAPI.reload("data-v-28f6c4d2", Component.options)
+    hotAPI.reload("data-v-74d2e1c5", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
