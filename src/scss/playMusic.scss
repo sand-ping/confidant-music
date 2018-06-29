@@ -33,6 +33,7 @@ header {
     position: absolute;
     width: 100%;
     text-align: center;
+    transition: top 1s;
     .lyric-item{
       height:20px;
       line-height: 20px;
@@ -56,7 +57,7 @@ footer{
     .progress{
       position: relative;
       width:calc(480rpx - 12rpx);
-      padding:0 6rpx;
+      margin:0 6rpx;
       .progress-line{
         position: absolute;
         left:0;

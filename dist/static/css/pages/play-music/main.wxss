@@ -36,6 +36,7 @@
   position: absolute;
   width: 100%;
   text-align: center;
+  transition: top 1s;
 }
 .body .lyric .lyric-item.data-v-638219e2 {
   height: 40rpx;
@@ -59,7 +60,7 @@
 ._footer .progress-wrap .progress.data-v-638219e2 {
   position: relative;
   width: calc(480rpx - 12rpx);
-  padding: 0 6rpx;
+  margin: 0 6rpx;
 }
 ._footer .progress-wrap .progress .progress-line.data-v-638219e2 {
   position: absolute;
