@@ -17,7 +17,6 @@
           <div class="composing">{{item.composing}}</div>
         </div>
       </div>
-
     </div>
 
   </div>
@@ -36,18 +35,18 @@ export default {
           composing: '赵雷'
         }
       ],
-      chooseHeader:1,
+      chooseHeader:1
     }
   },
   components: {
     card
   },
   methods: {
-    chooseHeaderM:function (option) {
-      this.chooseHeader=Number(option);
+    chooseHeaderM: function (option) {
+      this.chooseHeader = Number(option)
     },
-    goPlay:function (option) {
-      console.log(option);
+    goPlay: function (option) {
+      console.log(option)
       wx.navigateTo({
         'url':'/pages/play-music/main'
       })

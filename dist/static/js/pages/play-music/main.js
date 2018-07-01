@@ -59,6 +59,13 @@ app.$mount();
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -72,9 +79,11 @@ app.$mount();
       lyindex: 0, //当前歌词下标
       lytop: 360, //距离顶部多高
       lyheight: 40, //歌词行高
+      starttime: '00:00',
       endtime: '00:00',
       playClass: 'icon-bofang',
-      audioWatch: ''
+      audioWatch: '',
+      progressDotLeft: 0
     };
   },
   created: function created() {
@@ -87,8 +96,8 @@ app.$mount();
       var root = this;
       var lyric = root.lyric;
       var lyArr = lyric.split('.');
-      var endalltime = lyArr[lyArr.length - 1].split(' ')[0];
-      root.endtime = endalltime.substring(1, endalltime.length - 1);
+      //        var endalltime=lyArr[lyArr.length-1].split(' ')[0];
+      //        root.endtime=endalltime.substring(1,endalltime.length-1);
       var lytime = [];
       var lytext = [];
       for (var i = 0; i < lyArr.length; i++) {
@@ -123,11 +132,28 @@ app.$mount();
               }
               root.lyindex = index;
               root.lytop = 360 - index * 40;
+              root.progressDotLeft = currentPosition * 1.0 / duration * 468;
+              root.endtime = root.formatTime(duration);
+              root.starttime = root.formatTime(currentPosition);
             }
           }
         });
       }, 2000);
     },
+    //将秒转换为显示的时间格式xx:yy
+    formatTime: function formatTime(time) {
+      var second = time % 60;
+      var minute = parseInt(time / 60);
+      if (second < 10) {
+        second = '0' + second;
+      }
+      if (minute < 10) {
+        minute = '0' + minute;
+      }
+      var formatTime = minute + ':' + second;
+      return formatTime;
+    },
+    //触发播放或暂停按钮
     play: function play() {
       if (this.playClass == 'icon-bofang') {
         this.playClass = 'icon-zanting';
@@ -181,14 +207,24 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "progress-wrap"
   }, [_c('div', {
     staticClass: "starttime"
-  }, [_vm._v("00:00")]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.starttime))]), _vm._v(" "), _c('div', {
     staticClass: "progress"
   }, [_c('div', {
     staticClass: "progress-line"
+  }, [_c('div', {
+    staticClass: "progress-dot",
+    style: ('left:' + _vm.progressDotLeft + 'rpx')
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "progress-line-play",
+    style: ('width:' + _vm.progressDotLeft + 'rpx')
   })]), _vm._v(" "), _c('div', {
     staticClass: "endtime"
   }, [_vm._v(_vm._s(_vm.endtime))])]), _vm._v(" "), _c('div', {
     staticClass: "operate"
+  }, [_c('div', {
+    staticClass: "operate-left"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "operate-center"
   }, [_c('div', {
     staticClass: "prev iconfont icon-xiayishou-copy"
   }), _vm._v(" "), _c('div', {
@@ -203,6 +239,8 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "next iconfont icon-xiayishou"
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "operate-right"
   })])])], 1)
 }
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

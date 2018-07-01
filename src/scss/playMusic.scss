@@ -1,9 +1,11 @@
+$width:750rpx !global;
 .container{
   width:100%;
   height:100%;
   color: #333;
   margin:0;
   padding:0;
+  background: url('/static/img/musicBg.jpg');
 }
 header {
   text-align: center;
@@ -39,7 +41,6 @@ header {
       line-height: 20px;
       font-size: 16px;
       text-align: center;
-
     }
   }
 }
@@ -64,6 +65,23 @@ footer{
         top:15rpx;
         width:100%;
         border-bottom:1rpx solid #aaa;
+        .progress-dot{
+          width: 12px;
+          height: 12px;
+          border-radius: 6px;
+          position: absolute;
+          top: 0rpx;
+          left:0rpx;
+          transform: translate(0,-50%);
+          background: #5ac6f7;
+        }
+      }
+      .progress-line-play{
+        position: absolute;
+        left:0;
+        top:15rpx;
+        width: 0rpx;
+        border-bottom:1rpx solid #5ac6f7;
       }
     }
     .endtime{
@@ -72,15 +90,43 @@ footer{
   }
   .operate{
     display: flex;
-    justify-content: center;
-    div{
-      width:40px;
-      height:40px;
+    justify-content: space-between;
+    align-items: center;
+    $operate-width: 110rpx;
+    .operate-left{
+      width: $operate-width;
+    }
+    .operate-right{
+      width: $operate-width;
     }
     .iconfont{
       font-size: 50rpx;
-      color: #999;
+      color: #fff;
+      text-align: center;
     }
+    .operate-center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $width - $operate-width*2;
+      div{
+        width:40px;
+        height:40px;
+        border-radius: 20px;
+        background: #5ac6f7;
+        line-height: 40px;
+        margin:0 4px;
+      }
+      .play{
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background: #5ac6f7;
+        line-height: 60px;
+      }
+
+    }
+
   }
 }
 

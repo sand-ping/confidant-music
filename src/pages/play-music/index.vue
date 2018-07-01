@@ -15,16 +15,23 @@
     </div>
     <footer>
       <div class="progress-wrap">
-        <div class="starttime">00:00</div>
+        <div class="starttime">{{starttime}}</div>
         <div class="progress">
-          <div class="progress-line"></div>
+          <div class="progress-line">
+            <div class="progress-dot" :style="'left:'+progressDotLeft+'rpx'"></div>
+          </div>
+          <div class="progress-line-play" :style="'width:'+progressDotLeft+'rpx'"></div>
         </div>
         <div class="endtime">{{endtime}}</div>
       </div>
       <div class="operate">
-        <div class="prev iconfont icon-xiayishou-copy"></div>
-        <div :class="'play iconfont '+playClass" @click="play()"></div>
-        <div class="next iconfont icon-xiayishou"></div>
+        <div class="operate-left"></div>
+        <div class="operate-center">
+          <div class="prev iconfont icon-xiayishou-copy"></div>
+          <div :class="'play iconfont '+playClass" @click="play()"></div>
+          <div class="next iconfont icon-xiayishou"></div>
+        </div>
+        <div class="operate-right"></div>
       </div>
       <!--<audio src="http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46" id="myAudio" controls="true"></audio>-->
     </footer>
@@ -45,9 +52,11 @@
         lyindex:0, //当前歌词下标
         lytop:360, //距离顶部多高
         lyheight:40,//歌词行高
+        starttime:'00:00',
         endtime:'00:00',
         playClass:'icon-bofang',
         audioWatch:'',
+        progressDotLeft:0,
       }
     },
     created () {
@@ -59,8 +68,8 @@
         var root=this;
         var lyric=root.lyric;
         var lyArr=lyric.split('.');
-        var endalltime=lyArr[lyArr.length-1].split(' ')[0];
-        root.endtime=endalltime.substring(1,endalltime.length-1);
+//        var endalltime=lyArr[lyArr.length-1].split(' ')[0];
+//        root.endtime=endalltime.substring(1,endalltime.length-1);
         var lytime=[];
         var lytext=[];
         for(let i=0;i<lyArr.length;i++){
@@ -95,11 +104,28 @@
                 }
                 root.lyindex=index;
                 root.lytop=360-index*40;
+                root.progressDotLeft=((currentPosition*1.0)/duration)*468;
+                root.endtime=root.formatTime(duration);
+                root.starttime=root.formatTime(currentPosition);
               }
             }
           })
         },2000)
       },
+      //将秒转换为显示的时间格式xx:yy
+      formatTime:function (time) {
+        let second=time%60;
+        let minute=parseInt(time/60);
+        if(second<10){
+          second='0'+second;
+        }
+        if(minute<10){
+          minute='0'+minute;
+        }
+        let formatTime=minute+':'+second;
+        return formatTime;
+      },
+      //触发播放或暂停按钮
       play:function () {
         if(this.playClass=='icon-bofang'){
           this.playClass='icon-zanting';
