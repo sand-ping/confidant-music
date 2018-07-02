@@ -66,6 +66,7 @@ app.$mount();
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -193,7 +194,12 @@ app.$mount();
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "container"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  }, [_c('image', {
+    staticClass: "bgimage",
+    attrs: {
+      "src": "/static/img/musicBg.jpg"
+    }
+  }), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "body"
   }, [_c('div', {
     staticClass: "lyric",

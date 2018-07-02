@@ -3,12 +3,22 @@
 .container.data-v-638219e2 {
   width: 100%;
   height: 100%;
-  color: #333;
+  position: relative;
+  color: white;
   margin: 0;
   padding: 0;
-  background: url("/static/img/musicBg.jpg");
+  overflow: hidden;
+}
+.container .bgimage.data-v-638219e2 {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 ._header.data-v-638219e2 {
+  position: relative;
   text-align: center;
   padding: 12rpx 0;
   height: 136rpx;
@@ -17,7 +27,6 @@
   position: relative;
   padding: 0 60rpx;
   margin-top: 28rpx;
-  border-top: 2rpx solid white;
 }
 ._header .singer-wrap .singer.data-v-638219e2 {
   position: absolute;
@@ -46,6 +55,7 @@
   text-align: center;
 }
 ._footer.data-v-638219e2 {
+  position: relative;
   width: 100%;
   height: 192rpx;
 }

@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <image src="/static/img/musicBg.jpg" class="bgimage"></image>
     <header>
       <div class="song">江南</div>
       <div class="singer-wrap">
